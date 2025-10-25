@@ -15,4 +15,20 @@ c) Cài đặt file, khởi chạy service a1-
 a) Cài đặt thư viện nodered bằng các câu lệnh(hình dưới là ví dụ cho 1 thư viện, các cái còn lại làm tương tự):
 b) Hash PW và sửa vào setting.js:
 c) Khởi động lại service sau đó đăng nhập nodered: 
+## 5. Tạo API BE bằng nodered
+a) Thiết kế flow: 
+b) Code truy vấn cho node Function (viết vào mục On message)
+msg.payload = {
+    query: "SELECT * FROM dongvat"
+};
+return msg;
+c) Cấu hình để kết nối với DB qua localhost (dùng tài khoản sa):
+d) Kiểm tra dữ liệu trả về từ DB: 
+## 6. Tạo FE 
+- Tạo folder chứa các ngôn ngữ để làm FE theo yêu cầu.
+- FE sẽ gọi API từ BE Nodered
+- Kết quả trả về như sau:
+
+## 7. Nhận xét bài làm
+
 
