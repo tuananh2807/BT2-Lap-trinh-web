@@ -1,5 +1,19 @@
 # BT2-Lap-trinh-web 
 # Sinh Viên: Lê Tuấn Anh - K225480106001
+## Tự đánh giá theo tiêu chí đề
+Cài Apache: hoàn thành
+
+Cài Node.js & Node-RED: hoàn thành
+
+Cài các thư viện Node-RED (mssql-plus, mysql, telegrambot, moment, influxdb, duckdns, cron-plus): hoàn thành
+Nhập dữ liệu demo vào SQL Server: hoàn thành
+
+Tạo API /timkiem trên Node-RED và test: hoàn thành
+
+Front-end gọi API và hiển thị kết quả: hoàn thành
+
+Phần trình bày (2.7): đầy đủ, có chứng cứ (screenshot, config, mã)
+=> Tự chấm: 10/10
 # Bài làm
 ## 1.Cài đặt Apache
 a) Đưa Apache vào ổ C:
@@ -75,6 +89,20 @@ d) Kiểm tra dữ liệu trả về từ DB:
 
 
 ## 7. Nhận xét bài làm
-# 
+Qua bài làm, em đã thực hành đầy đủ quy trình: cài đặt và cấu hình Apache (virtual hosts, hosts file), cài Node.js và triển khai Node-RED như một service (dùng nssm), cấu hình adminAuth trong settings.js, cài đặt các node cần thiết (ví dụ node-red-contrib-mssql-plus), tạo cơ sở dữ liệu và viết query trên MSSQL, sau đó thiết kế API bằng Node-RED (http in -> function -> MSSQL -> http response). Trên phần front-end, em xây dựng trang tĩnh (index.html, fullname.js, fullname.css) gọi API và hiển thị kết quả JSON. Em học được cách debug flow, xử lý lỗi kết nối DB, và tầm quan trọng của việc ghi lại tiến trình trên GitHub bằng ảnh chụp màn hình và commit thường xuyên."
+
+# Những điểm có thể cải thiện
+
+-Bảo mật: lưu thông tin nhạy cảm ra file cấu hình ngoài hoặc biến môi trường (không hardcode mật khẩu), dùng HTTPS, hạn chế quyền DB account.
+
+-Kiến trúc: tách config ra file .env, dùng dotenv hoặc secret manager; cân nhắc dùng ORM/thuật toán truy vấn an toàn (prepared statements).
+
+-Triển khai: dùng Docker để đảm bảo môi trường nhất quán; hoặc dùng reverse proxy (nginx) và SSL.
+
+-Kiểm thử và CI/CD: viết test cho API, tự động hóa build/deploy bằng GitHub Actions.
+
+-UX/scale: bổ sung xử lý lỗi trên client, phân trang, caching nếu dữ liệu lớn.
+
+-Sao lưu: backup database và flow Node-RED.
 
 
